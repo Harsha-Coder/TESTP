@@ -54,6 +54,10 @@ app.post('/api/sendotp',async(req,res)=>{
         const sent_from = process.env.EMAIL_USER
         const reply_to = email
         const rotp = aotp
+        const origin = req.get('origin');
+        res.header('Access-Control-Allow-Origin', origin);
+        res.header('Access-Control-Allow-Methods', 'GET, POST');
+
         await sendotp(rotp,sent_to, sent_from, reply_to);
         res.status(200).json({success:true,message:"OTP Email sent successfully"})
     }
