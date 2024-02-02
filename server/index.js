@@ -11,7 +11,6 @@ const multer = require('multer')
 const csv = require('csvtojson')
 const studentmodel = require('./models/student')
 app.use(express.json())
-app.use(bodyParser.json())
 app.use(cors(
     {
         origin:["*"],
