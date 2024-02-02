@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(bodyParser.json())
 app.use(cors(
     {
-        origin:["*"],
+        origin:["https://deploy-demo-server.vercel.app/"],
         methods:["GET", "POST"],
         credentials:true
     }
