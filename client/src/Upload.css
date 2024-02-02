@@ -1,0 +1,27 @@
+.upload-container {
+    margin-top: 20px;
+  }
+  
+  .upload-paper {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .file-input-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .selected-file {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
