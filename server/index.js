@@ -11,13 +11,20 @@ const multer = require('multer')
 const csv = require('csvtojson')
 const studentmodel = require('./models/student')
 app.use(express.json())
-app.use(cors(
-    {
-        origin:"*",
-        methods:["GET", "POST"],
-        credentials:true
-    }
-))
+app.use(cors({
+    origin: function (origin, callback) {
+        // Check if the request origin is allowed
+        const allowedOrigins = ["https://deploy-demo-client.vercel.app"];
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    methods: ["GET", "POST"],
+    credentials: true
+}));
+
 
 mongoose.connect(process.env.MONGODB_URI)
 .then(response => {
