@@ -13,7 +13,7 @@ const studentmodel = require('./models/student')
 app.use(express.json())
 app.use(cors(
     {
-        origin:["*"],
+        origin:"*",
         methods:["GET", "POST"],
         credentials:true
     }
