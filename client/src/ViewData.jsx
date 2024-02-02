@@ -6,7 +6,7 @@ function Viewdata() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/viewdata')
+    axios.get('https://deploy-demo-server.vercel.app/api/viewdata')
       .then(response => setStudents(response.data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);

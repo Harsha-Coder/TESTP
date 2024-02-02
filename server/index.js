@@ -12,7 +12,13 @@ const csv = require('csvtojson')
 const studentmodel = require('./models/student')
 app.use(express.json())
 app.use(bodyParser.json())
-app.use(cors())
+app.use(cors(
+    {
+        origin:["https://deploy-demo-server.vercel.app/"],
+        methods:["GET", "POST"],
+        credentials:true
+    }
+))
 
 mongoose.connect(process.env.MONGODB_URI)
 .then(response => {

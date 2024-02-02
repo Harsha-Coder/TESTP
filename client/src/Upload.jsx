@@ -30,7 +30,7 @@ function Upload() {
     const formData = new FormData();
     formData.append("csvFile", selectedFile);
     try {
-      await axios.post("http://localhost:5000/api/uploadcsv", formData);
+      await axios.post("https://deploy-demo-server.vercel.app/api/uploadcsv", formData);
       console.log("File uploaded successfully!");
       setUploadStatus("success");
       setShowAlert(true);

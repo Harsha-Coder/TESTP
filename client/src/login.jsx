@@ -19,7 +19,7 @@ function Login() {
     };
 
     try {
-      const response = await axios.post('http://localhost:5000/api/sendotp', data);
+      const response = await axios.post('https://deploy-demo-server.vercel.app/api/sendotp', data);
       console.log('OTP Sent Successfully');
       // Assuming the server responds with a JWT token
       const { token } = response.data;
@@ -39,7 +39,7 @@ function Login() {
     };
 
     try {
-      const response = await axios.post('http://localhost:5000/api/verifyotp', data);
+      const response = await axios.post('https://deploy-demo-server.vercel.app/api/verifyotp', data);
       console.log(response);
 
       if (response.data.success) {
