@@ -20,7 +20,7 @@ function Upload() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadStatus, setUploadStatus] = useState("");
   const [showAlert, setShowAlert] = useState(false);
-
+  axios.defaults.withCredentials = true
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!selectedFile) {

@@ -11,7 +11,7 @@ function Login() {
   const [otp, setOtp] = useState('');
   const [message, setMessage] = useState('');
   const [showVerificationForm, setShowVerificationForm] = useState(false);
-
+  axios.defaults.withCredentials = true
   const handleSendOtp = async (e) => {
     e.preventDefault();
     const data = {

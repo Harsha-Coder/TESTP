@@ -4,13 +4,13 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 import NavBar from './adminNavBar';
 function Viewdata() {
   const [students, setStudents] = useState([]);
-
+  axios.defaults.withCredentials = true
   useEffect(() => {
     axios.get('https://deploy-demo-server.vercel.app/api/viewdata')
       .then(response => setStudents(response.data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
-
+  
   const sortedStudents = [...students].sort((a, b) => a.ID - b.ID);
 
   return (

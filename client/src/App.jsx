@@ -9,10 +9,11 @@ import Login from './login'
 import Profile from './profile'
 import Upload from './Upload'
 import Viewdata from './ViewData'
+import axios from 'axios'
 
 function App() {
 
-
+  axios.defaults.withCredentials = true
   return (
     <div>
       <BrowserRouter>
